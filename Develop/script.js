@@ -1,17 +1,22 @@
 // Assignment code here
+var generatePass = document.querySelector("placeholder");
+var submitBut = document.querySelector("#generate");
 
-
-// Get references to the #generate element
-var generateBtn = document.querySelector("#generate");
-
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
+var button = document.createElement("button");
+function renderPass() {
+  submitBut.innerHTML = "";
 }
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+randomPass(10);
+function randomPass(stringLength){
+  var randoString = "";
+  var characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz"
+  for (let i = 0; i < stringLength; i++) {
+    randoString += characters.charAt(Math.floor(Math.random() * characters.length))
+  }
+  console.log(randoString);
+}
+
+submitBut.addEventListener("click", function(event) {
+  event.preventDefault();
+});

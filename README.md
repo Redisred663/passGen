@@ -8,12 +8,7 @@
 
 ## Usage
 
-Provide instructions and examples for use. Include screenshots as needed.
+ - I managed to get the actual css linked, along with the javascript, however, I struggled along the way, and was unable to properly complete my assignment on time! But I have submitted what I have regardless! And I will continue to work on it without any time crunch until I can figure out what I am doing incorrectly!
+![The basic looks of the website have been registered!](./Develop/images/screnshot.png)
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative file path, add it to your README using the following syntax:
-
-![alt text](assets/images/screenshot.png)
-
-## Features
-
-If your project has a lot of features, list them here.
+![However, it seems as I have messed up somewhere along the way, as this is all I can get out of it!](./Develop/images/screenshot.png)
