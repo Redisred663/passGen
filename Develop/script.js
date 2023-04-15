@@ -1,22 +1,29 @@
 // Assignment code here
-var generatePass = document.querySelector("placeholder");
-var submitBut = document.querySelector("#generate");
-
-var button = document.createElement("button");
-function renderPass() {
-  submitBut.innerHTML = "";
-}
-
-randomPass(10);
-function randomPass(stringLength){
-  var randoString = "";
-  var characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz"
-  for (let i = 0; i < stringLength; i++) {
-    randoString += characters.charAt(Math.floor(Math.random() * characters.length))
-  }
-  console.log(randoString);
-}
-
-submitBut.addEventListener("click", function(event) {
-  event.preventDefault();
+var generateButton = document.getElementById("generate");
+generateButton.addEventListener("click", function() {
+  var password = newPassword(10);
+  var passwordField = document.getElementById("password");
+  passwordField.value = password;
+  generateButton.innerHTML = "Generate New Password";
 });
+
+function renderPass() {
+  submitBut.innerHTML = "Generate Password";
+}
+
+function newPassword(length) {
+  let password = '';
+  const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()";
+  let passLength = length;
+
+  const array = new Uint32Array(length);
+  window.crypto.getRandomValues(array);
+
+  for (i=0; i<length; i++) {
+    password += chars[array[i] % chars.length];
+  }
+  console.log(password);
+  return password;
+}
+
+
